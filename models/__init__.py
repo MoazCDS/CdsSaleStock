@@ -7,6 +7,6 @@
 #    of the Software or modified copies of the Software.
 ##############################################################################
 
-from . import models
-from . import wizard
-from . import reports
+from . import sale_training_tag
+from . import sale_order
+from . import account_move

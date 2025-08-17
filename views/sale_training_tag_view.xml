@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# -*- coding: utf-8 -*-
+
+##############################################################################
+#    Copyright (c) 2021 CODOOS SRL. (http://codoos.com)
+#    Maintainer: Eng.Ramadan Khalil (<rkhalil1990@gmail.com>)
+#    It is forbidden to publish, distribute, sublicense, or sell copies
+#    of the Software or modified copies of the Software.
+##############################################################################
+-->
+<odoo>
+    <record id="view_sale_training_tag_tree" model="ir.ui.view">
+        <field name="name">sale.training.tag.tree</field>
+        <field name="model">sale.training.tag</field>
+        <field name="arch" type="xml">
+        <list multi_edit="1">
+            <field name="name"/>
+            <field name="sequence"/>
+            <field name="color"/>
+            <field name="active"/>
+        </list>
+        </field>
+    </record>
+
+
+    <record id="view_sale_training_tag_form" model="ir.ui.view">
+        <field name="name">sale.training.tag.form</field>
+        <field name="model">sale.training.tag</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="sequence"/>
+                        <field name="color"/>
+                        <field name="active"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record id="view_sale_training_tag_kanban" model="ir.ui.view">
+        <field name="name">sale.training.tag.kanban</field>
+        <field name="model">sale.training.tag</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="active">
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_global_click">
+                            <strong t-esc="record.name.value"/>
+                            <div class="text-muted">
+                            Seq: <t t-esc="record.sequence.value or 0"/>
+                        </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+
+<!--    <record id="view_sale_training_tag_search" model="ir.ui.view">-->
+<!--        <field name="name">sale.training.tag.search</field>-->
+<!--        <field name="model">sale.training.tag</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search>-->
+<!--                <field name="name"/>-->
+<!--                <filter string="Active" domain="[('active', '=', True)]"/>-->
+<!--                <filter string="Archived" domain="[('active', '=', False)]"/>-->
+<!--            </search>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+    <record id="action_sale_training_tags" model="ir.actions.act_window">
+        <field name="name">Training Tags</field>
+        <field name="res_model">sale.training.tag</field>
+        <field name="view_mode">list,form,kanban</field>
+    </record>
+
+
+    <menuitem
+        id="sale_training_tag_menu_item"
+        name="Sale Training Tags"
+        parent="cds_sale_stock_root_menu"
+        action="action_sale_training_tags"
+    />
+</odoo>

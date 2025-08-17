@@ -7,6 +7,14 @@
 #    of the Software or modified copies of the Software.
 ##############################################################################
 
-from . import models
-from . import wizard
-from . import reports
+from odoo import models, fields
+
+class SaleTrainingTag(models.Model):
+    _name = "sale.training.tag"
+    _description = "Sales Training Tag"
+    _order = "sequence, name"
+
+    sequence = fields.Integer(default=10)
+    name = fields.Char(required=True)
+    color = fields.Integer()
+    active = fields.Boolean(default=True)

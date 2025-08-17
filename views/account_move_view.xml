@@ -1,0 +1,25 @@
+<!--
+# -*- coding: utf-8 -*-
+
+##############################################################################
+#    Copyright (c) 2021 CODOOS SRL. (http://codoos.com)
+#    Maintainer: Eng.Ramadan Khalil (<rkhalil1990@gmail.com>)
+#    It is forbidden to publish, distribute, sublicense, or sell copies
+#    of the Software or modified copies of the Software.
+##############################################################################
+-->
+
+<odoo>
+    <record id="view_invoice_form_inherit" model="ir.ui.view">
+        <field name="name">invoice.form.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[.//field[@name='partner_id']]" position="after">
+                <group>
+                    <field name="customer_notes"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+</odoo>

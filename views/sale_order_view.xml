@@ -1,0 +1,50 @@
+<!--
+# -*- coding: utf-8 -*-
+
+##############################################################################
+#    Copyright (c) 2021 CODOOS SRL. (http://codoos.com)
+#    Maintainer: Eng.Ramadan Khalil (<rkhalil1990@gmail.com>)
+#    It is forbidden to publish, distribute, sublicense, or sell copies
+#    of the Software or modified copies of the Software.
+##############################################################################
+-->
+
+<odoo>
+    <record id="view_order_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.form.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <group>
+                    <field name="training_tag_ids" widget="many2many_tags" readonly="state != 'draft'"/>
+                    <field name="stock_ready"/>
+                    <field name="customer_note" readonly="state != 'draft'"/>
+                </group>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_order_list_inherit" model="ir.ui.view">
+        <field name="name">sale.order.list.inherit</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.sale_order_list_upload"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='partner_id']" position="after">
+                <field name="training_tag_ids" widget="many2many_tags"/>
+                <field name="stock_ready"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="action_export_with_filter" model="ir.actions.server">
+        <field name="name">Export With Filter</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <field name="binding_model_id" ref="sale.model_sale_order"/>
+        <field name="state">code</field>
+        <field name="binding_type">action</field>
+        <field name="code">
+            action = records.action_export_with_filter()
+        </field>
+    </record>
+</odoo>

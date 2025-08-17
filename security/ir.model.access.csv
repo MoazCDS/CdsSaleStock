@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_sale_training_tag_trainee,access_sale_training_tag,model_sale_training_tag,cds_sale_stock.sales_trainee_group,1,1,1,1
+access_sale_training_tag_supervisor,access_sale_training_tag_supervisor,model_sale_training_tag,cds_sale_stock.sales_supervisor_group,1,1,1,1
+access_sale_order_trainee,access_sale_order_trainee,model_sale_order,cds_sale_stock.sales_trainee_group,1,0,0,0
+access_sale_order_supervisor,access_sale_order_supervisor,model_sale_order,cds_sale_stock.sales_supervisor_group,1,1,1,1
+access_sale_excel_wizard,access_sale_excel_wizard,model_sale_excel_wizard,,1,1,1,1

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+# -*- coding: utf-8 -*-
+
+##############################################################################
+#    Copyright (c) 2021 CODOOS SRL. (http://codoos.com)
+#    Maintainer: Eng.Ramadan Khalil (<rkhalil1990@gmail.com>)
+#    It is forbidden to publish, distribute, sublicense, or sell copies
+#    of the Software or modified copies of the Software.
+##############################################################################
+-->
+
+<odoo>
+    <record id="sale_excel_wizard_view_form" model="ir.ui.view">
+        <field name="name">Sale Excel Wizard Form</field>
+        <field name="model">sale.excel.wizard</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="salesperson"/>
+                    <field name="date_from"/>
+                    <field name="date_to"/>
+                    <field name="state"/>
+                </group>
+                <footer>
+                    <button string="Export" type="object" name="export_with_filter_action" class="btn-primary"/>
+                    <button string="Cancel" special="cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="sale_excel_wizard_action" model="ir.actions.act_window">
+        <field name="name">XLSX Export</field>
+        <field name="res_model">sale.excel.wizard</field>
+        <field name="target">new</field>
+        <field name="view_mode">form</field>
+    </record>
+</odoo>
