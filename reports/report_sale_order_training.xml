@@ -9,26 +9,6 @@
 #    of the Software or modified copies of the Software.
 ##############################################################################
 -->
-<!--<odoo>-->
-<!--    <template id="report_saleorder_document" inherit_id="sale.report_saleorder_document" primary="True">-->
-<!--        <xpath expr='//t[@t-call="sale.report_saleorder_document"]' position="inside">-->
-<!--            <p>-->
-<!--                <strong>Training Tags:</strong>-->
-<!--                <span t-esc="', '.join(doc.training_tag_ids.mapped('name')) or '-'"/>-->
-<!--            </p>-->
-<!--            <p>-->
-<!--                <strong>Stock Ready:</strong>-->
-<!--                <span t-esc="'Ready' if doc.stock_ready else 'No'"/>-->
-<!--            </p>-->
-<!--            <p>-->
-<!--                <strong>Customer Note:</strong>-->
-<!--                <span t-esc="doc.customer_note or '-'"/>-->
-<!--            </p>-->
-<!--        </xpath>-->
-<!--    </template>-->
-<!--</odoo>-->
-
-
 
 <odoo>
     <data>

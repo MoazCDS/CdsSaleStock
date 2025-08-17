@@ -61,20 +61,6 @@
         </field>
     </record>
 
-
-<!--    <record id="view_sale_training_tag_search" model="ir.ui.view">-->
-<!--        <field name="name">sale.training.tag.search</field>-->
-<!--        <field name="model">sale.training.tag</field>-->
-<!--        <field name="arch" type="xml">-->
-<!--            <search>-->
-<!--                <field name="name"/>-->
-<!--                <filter string="Active" domain="[('active', '=', True)]"/>-->
-<!--                <filter string="Archived" domain="[('active', '=', False)]"/>-->
-<!--            </search>-->
-<!--        </field>-->
-<!--    </record>-->
-
-
     <record id="action_sale_training_tags" model="ir.actions.act_window">
         <field name="name">Training Tags</field>
         <field name="res_model">sale.training.tag</field>
